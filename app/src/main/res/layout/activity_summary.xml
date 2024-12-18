@@ -3,24 +3,66 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="20dp"
+    android:background="@android:color/white">
 
+    <!-- Header: Enrollment Summary -->
     <TextView
         android:id="@+id/textViewSummary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Enrollment Summary"
-        android:textSize="18sp" />
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="20dp" />
 
+    <!-- List of Subjects -->
+    <!-- Subjects List -->
     <TextView
         android:id="@+id/textViewSubjects"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Subjects: " />
+        android:text="Subjects:"
+        android:textSize="16sp"
+        android:textColor="#333333"
+        android:layout_marginBottom="8dp"/>
 
-    <TextView
-        android:id="@+id/textViewTotalCredits"
+    <LinearLayout
+        android:id="@+id/subjectsContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Total Credits: " />
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
+
+    </LinearLayout>
+
+    <!-- Total Credits Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:id="@+id/textViewTotalCreditsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Credits: "
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray"
+            android:paddingEnd="10dp" />
+
+        <TextView
+            android:id="@+id/textViewTotalCredits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="18sp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textStyle="bold" />
+    </LinearLayout>
 </LinearLayout>

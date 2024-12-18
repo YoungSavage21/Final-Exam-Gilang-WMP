@@ -93,12 +93,19 @@ public class EnrollmentActivity extends AppCompatActivity {
 
                             // Create a new checkbox for each subject
                             CheckBox checkBox = new CheckBox(EnrollmentActivity.this);
-                            checkBox.setText(String.format("%s (%s credits)", subjectName, creditsString));
 
+                            checkBox.setText(String.format("%s", subjectName));
+                            checkBox.setTextSize(14); // Set text size as 14sp
+                            checkBox.setPadding(0, 10, 0, 10); // Adjust padding if needed
+                            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT
+                            );
+                            layoutParams.setMargins(0, 10, 0, 10);  // Set margin top and bottom for spacing between checkboxes
+                            checkBox.setLayoutParams(layoutParams);
                             checkBoxContainer.addView(checkBox);
-
-                            // Map checkbox to its credit value
                             checkBoxData.put(checkBox, credits);
+
                         } catch (NumberFormatException e) {
                             Toast.makeText(this, "Invalid credits format for subject: " + subjectName, Toast.LENGTH_SHORT).show();
                         }

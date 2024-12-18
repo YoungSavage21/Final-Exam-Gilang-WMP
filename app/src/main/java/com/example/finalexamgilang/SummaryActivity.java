@@ -63,7 +63,7 @@ public class SummaryActivity extends AppCompatActivity {
                             int credits = ((Long) entry.getValue()).intValue();
 
                             // Append subject name and credits to the display
-                            subjects.append(subjectName).append("\n");
+                            subjects.append("\u2022 ").append(subjectName).append(" - ").append(credits).append(" Credits\n");
                             totalCredits += credits;
                         }
                     }
